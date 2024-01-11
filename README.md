@@ -18,7 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them:
 
-```bash
+
 node.js
 npm or yarn
 
@@ -28,17 +28,17 @@ A step by step series of examples that tell you how to get a development environ
 
 Clone the repository:
 
-```bash
+
 git clone https://github.com/your-username/soflamgpt.git
 
 
 Navigate to the project directory:
 
-```bash
+
 cd Full_Stack_ChatBOT
 
 Install dependencies:
 
-```bash
+
 npm start
 
