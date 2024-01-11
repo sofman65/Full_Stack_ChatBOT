@@ -1,3 +1,5 @@
+
+require('dotenv').config(); // You can import it as a module if you want using package.json
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -11,10 +13,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
+
 const configuration = new Configuration({
-    organization: "org-mzFFH6CKnowgZniJBvjkVris",
-    apiKey: "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"
+    organization: process.env.OPENAI_ORG, // Assuming you have this in your .env
+    apiKey: process.env.OPENAI_API_KEY // Your API key variable
 });
+
 
 
 const openai = new OpenAIApi(configuration);
@@ -38,7 +42,7 @@ app.post("/",async (req,res) => {
     });
 
     res.json({
-        output: result.data.choices[0].message.content
+        output: result.data.choices[0].message
     });
 });
 

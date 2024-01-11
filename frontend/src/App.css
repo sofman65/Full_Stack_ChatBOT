@@ -3,14 +3,15 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  
+  
+  margin: auto;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  animation: gradientShift 10s ease infinite;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  
   -webkit-text-size-adjust: 100%;
 }
 
@@ -22,29 +23,46 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   text-align: center;
-  position: sticky;
+  
   top: 0;
-  background-color: #242424;
+  color:#fff;
+  
+  
 }
 
-main{
-  max-width: 800px;
-  margin: auto;
+h1:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  
 }
+
+section {
+  overflow-y: auto;
+  max-height: 500px; /* Adjust the height as needed */
+}
+
 
 p{
   background-color: darkslategray;
+  color: #fff;
   max-width: 70%;
   padding: 15px;
   border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+p:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 
 p span{
   margin: 5px;
 }
 
 p span:first-child{
-  margin-right: 0;
+  margin-right: 5;
 }
 
 .user_msg{
@@ -52,11 +70,6 @@ p span:first-child{
   margin-left: 30%;
   display: flex;
   flex-direction: row-reverse;
-}
-
-.hide {
-  visibility: hidden;
-  display: none;
 }
 
 form{
@@ -71,13 +84,116 @@ input{
   border: none;
   padding: 10px;
   font-size: 1.2rem;
-  background-color: rgb(28, 23, 23);
+  border-radius: 50px;
+  background-color:rgb(17, 36, 36);
 }
 
 input:focus{
   outline: none;
+  /* Darker shade when focused */
 }
 
 
 
+
+  /*
+.loader {
+  border: 5px solid #f3f3f3; 
+  border-top: 5px solid #3498db; 
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  position: absolute; /* Position the loader within the assistant_msg 
+  top: 50%; /* Center vertically 
+  left: 50%; /* Center horizontally 
+  transform: translate(50%, 50%); /* Adjust for exact centering
+  display: inline-block;
+  
+}
+
+*/
+
+.typing-indicator p {
+  margin-right: 10px; /* Space between text and loader */
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+/* Mobile and small devices */
+@media screen and (max-width: 768px) {
+  main {
+      padding: 10px;
+  }
+
+  h1 {
+      font-size: 2em;
+  }
+
+
+
+  .user_msg {
+      margin-left: 0;
+  }
+
+  input {
+      font-size: 1rem;
+  }
+}
+
+
+/* Tablet and medium devices */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+      font-size: 2.5em;
+  }
+
+  p {
+      max-width: 85%;
+  }
+}
+
+/* Larger devices */
+@media screen and (min-width: 1025px) {
+  h1 {
+      font-size: 3em;
+  }
+
+  p {
+      max-width: 70%;
+  }
+
+
+
+
+
+/* Typing Animation */
+@keyframes typing {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+
+.hide {
+  display: none; /* Hide the element when not typing */
+}
+
+/* Typing Indicator Styles */
+.typing-indicator {
+  animation: typing 1.5s infinite; /* Apply animation */
+  /* Additional styling for the typing indicator */
+  color: #fff; /* Example color, adjust as needed */
+    display: flex;
+  align-items: center;
+  justify-content:flex-start
+  
+}
 
