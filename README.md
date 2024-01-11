@@ -37,8 +37,8 @@ Navigate to the project directory:
 
 cd Full_Stack_ChatBOT
 
-Install dependencies:
+Install dependencies and start the development server:
 
-
+npm install
 npm run dev
 
