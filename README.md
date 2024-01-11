@@ -40,5 +40,5 @@ cd Full_Stack_ChatBOT
 Install dependencies:
 
 
-npm start
+npm run dev
 
